@@ -1,0 +1,4 @@
+/.lake
+.venv/
+blueprint/web/js/
+blueprint/web/styles/

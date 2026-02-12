@@ -5,3 +5,79 @@
 % If you want to split the blueprint content into several files then
 % the current file can be a simple sequence of \input. Otherwise It
 % can start with a \section or \chapter for instance.
+
+\begin{lemma}\label{minpoly_deg_le_two}\lean{minpoly_deg_le_two}\leanok
+
+\end{lemma}
+
+\begin{lemma}\label{minpoly_dvd_X_pow_sub_one}\lean{minpoly_dvd_X_pow_sub_one}\leanok
+
+\end{lemma}
+
+\begin{lemma}\label{exist_normalizefactor}\lean{exist_normalizefactor}\leanok
+
+\end{lemma}
+
+\begin{lemma}\label{normalizedfactor_eq_cyclotomic}\lean{normalizedfactor_eq_cyclotomic}\leanok\uses{minpoly_dvd_X_pow_sub_one}
+
+\end{lemma}
+
+\begin{lemma}\label{cyclotomic_deg_eq_totient}\lean{cyclotomic_deg_eq_totient}\leanok
+
+\end{lemma}
+
+\begin{lemma}\label{exist_factorization}\lean{exist_factorization}\leanok
+
+\end{lemma}
+
+\begin{lemma}\label{totient_factorization}\lean{totient_factorization}\leanok
+    
+\end{lemma}
+
+\begin{lemma}\label{n_exist}\lean{n_exist}\leanok\uses{totient_factorization, exist_factorization}
+
+\end{lemma}
+
+\begin{lemma}\label{totient_eq_two_iff}\lean{totient_eq_two_iff}\leanok\uses{n_exist}
+
+\end{lemma}
+
+\begin{lemma}\label{totient_le_two_iff}\lean{totient_le_two_iff}\leanok\uses{totient_eq_two_iff}
+
+\end{lemma}
+
+\begin{lemma}\label{cyclotomic_four}\lean{cyclotomic_four}\leanok
+
+\end{lemma}
+
+\begin{lemma}\label{cyclotomic_six}\lean{cyclotomic_six}\leanok
+
+\end{lemma}
+
+\begin{lemma}\label{normalizedfactor_class}\lean{normalizedfactor_class}\leanok\uses{normalizedfactor_eq_cyclotomic, minpoly_deg_le_two, cyclotomic_deg_eq_totient, totient_le_two_iff}
+
+\end{lemma}
+
+\begin{lemma}\label{minpoly_squarefree}\lean{minpoly_squarefree}\leanok\uses{minpoly_dvd_X_pow_sub_one}
+
+\end{lemma}
+
+\begin{lemma}\label{minpoly_class}\lean{minpoly_class}\leanok\uses{exist_normalizefactor, normalizedfactor_class, minpoly_deg_le_two, minpoly_squarefree, cyclotomic_deg_eq_totient, cyclotomic_four, cyclotomic_six}
+
+\end{lemma}
+
+\begin{lemma}\label{minpoly_cyc_order}\lean{minpoly_cyc_order}\leanok\uses{cyclotomic_four, cyclotomic_six}
+
+\end{lemma}
+
+\begin{theorem}\label{finorder_class}\lean{finorder_class}\leanok\uses{minpoly_class, minpoly_cyc_order}
+
+\end{theorem}
+
+\begin{definition}\label{toGL}\lean{toGL}\leanok
+    
+\end{definition}
+
+\begin{theorem}\label{finite_order_matrix}\lean{finite_order_matrix}\leanok\uses{toGL}
+
+\end{theorem}
