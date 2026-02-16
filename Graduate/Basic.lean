@@ -28,7 +28,7 @@ lemma minpoly_deg_le_two : (minpoly ℚ M.val).natDegree ≤ 2 :=
       apply natDegree_le_of_dvd (dvd ℚ M.val (aeval_self_charpoly M.val))
       · apply ne_zero_of_natDegree_gt
         show 0 < (charpoly M.val).natDegree
-        simp [charpoly_natDegree_eq_dim]
+        rw [charpoly_natDegree_eq_dim, Fintype.card_fin]; decide
     _ = 2 := charpoly_natDegree_eq_dim M.val
 
 
@@ -54,11 +54,11 @@ lemma normalizedfactor_eq_cyclotomic (h : IsOfFinOrder M.val) (h' : n = orderOf 
     exact dvd_trans fdvd (minpoly_dvd_X_pow_sub_one M h')
   obtain ⟨i, imem, hdvd'⟩ := h₁
   use i, imem
-  rcases associated_of_dvd firr (cyclotomic.irreducible_rat (pos_of_mem_divisors imem)) hdvd' with ⟨u, feq⟩
-  rw [← feq, left_eq_mul₀ (Monic.ne_zero fmon), ← Monic.isUnit_iff]
+  rcases associated_of_dvd firr (cyclotomic.irreducible_rat (pos_of_mem_divisors imem)) hdvd' with ⟨u, fueq⟩
+  rw [← fueq, left_eq_mul₀ (Monic.ne_zero fmon), ← Monic.isUnit_iff]
   · exact u.isUnit
   · apply Monic.of_mul_monic_left fmon
-    rw [feq]; exact cyclotomic.monic i ℚ
+    rw [fueq]; exact cyclotomic.monic i ℚ
 
 
 -- 円分多項式の次数はオイラーのトーシェント関数と一致する
