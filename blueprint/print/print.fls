@@ -186,6 +186,12 @@ INPUT ./content.tex
 INPUT ./content.tex
 INPUT ./content.tex
 INPUT content.tex
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /home/zen/Lean/graduate/blueprint/print/print.aux
 INPUT /home/zen/Lean/graduate/blueprint/print/print.out
 INPUT /home/zen/Lean/graduate/blueprint/print/print.out

@@ -7,77 +7,73 @@
 % can start with a \section or \chapter for instance.
 
 \begin{lemma}\label{minpoly_deg_le_two}\lean{minpoly_deg_le_two}\leanok
-
+    最小多項式 \(m_M(x)\) の次数は \(2\) 以下.
 \end{lemma}
 
 \begin{lemma}\label{minpoly_dvd_X_pow_sub_one}\lean{minpoly_dvd_X_pow_sub_one}\leanok
-
+    最小多項式 \(m_M(x)\) は, \(x^n - 1\) を割り切る.
 \end{lemma}
 
 \begin{lemma}\label{exist_normalizefactor}\lean{exist_normalizefactor}\leanok
-
+    体上の単元でない任意の多項式にはモニックな既約因子が存在する.
 \end{lemma}
 
 \begin{lemma}\label{normalizedfactor_eq_cyclotomic}\lean{normalizedfactor_eq_cyclotomic}\leanok\uses{minpoly_dvd_X_pow_sub_one}
-
+    最小多項式 \(m_M(x)\) のモニックな既約因子は, ある \(n\) の正の約数 \(i\) に対する
+    第 \(i\) 円分多項式 \(\Phi_i(x)\) と一致する.
 \end{lemma}
 
 \begin{lemma}\label{cyclotomic_deg_eq_totient}\lean{cyclotomic_deg_eq_totient}\leanok
-
-\end{lemma}
-
-\begin{lemma}\label{exist_factorization}\lean{exist_factorization}\leanok
-
-\end{lemma}
-
-\begin{lemma}\label{totient_factorization}\lean{totient_factorization}\leanok
-    
+    第 \(n\) 円分多項式 \(\Phi_n(x)\) の次数は, オイラーのトーシェント関数 \(\phi(n)\) に等しい.
 \end{lemma}
 
 \begin{lemma}\label{n_exist}\lean{n_exist}\leanok\uses{totient_factorization, exist_factorization}
-
+    \(\phi(n) = 2\) ならば, \(n\) は \(2\) と \(3\) 以外の素因数をもたない.
 \end{lemma}
 
 \begin{lemma}\label{totient_eq_two_iff}\lean{totient_eq_two_iff}\leanok\uses{n_exist}
-
+    \(\phi(n) = 2\) ~\Leftrightarrow~ \(n = 3, 4, 6\).
 \end{lemma}
 
 \begin{lemma}\label{totient_le_two_iff}\lean{totient_le_two_iff}\leanok\uses{totient_eq_two_iff}
-
+    \(\phi(n) \le 2\) ~\Leftrightarrow~ \(n = 1, 2, 3, 4, 6\).
 \end{lemma}
 
 \begin{lemma}\label{cyclotomic_four}\lean{cyclotomic_four}\leanok
-
+    \(\Phi_4(x) = x^2 + 1\).
 \end{lemma}
 
 \begin{lemma}\label{cyclotomic_six}\lean{cyclotomic_six}\leanok
-
+    \(\Phi_6(x) = x^2 - x + 1\).
 \end{lemma}
 
 \begin{lemma}\label{normalizedfactor_class}\lean{normalizedfactor_class}\leanok\uses{normalizedfactor_eq_cyclotomic, minpoly_deg_le_two, cyclotomic_deg_eq_totient, totient_le_two_iff}
-
+    最小多項式のモニックな既約因子は
+    \[\Phi_1(x), \Phi_2(x), \Phi_3(x), \Phi_4(x), \Phi_6(x) \quad \text{に限る.}\]
 \end{lemma}
 
 \begin{lemma}\label{minpoly_squarefree}\lean{minpoly_squarefree}\leanok\uses{minpoly_dvd_X_pow_sub_one}
-
+    最小多項式 \(m_M(x)\) は重解を持たない.
 \end{lemma}
 
 \begin{lemma}\label{minpoly_class}\lean{minpoly_class}\leanok\uses{exist_normalizefactor, normalizedfactor_class, minpoly_deg_le_two, minpoly_squarefree, cyclotomic_deg_eq_totient, cyclotomic_four, cyclotomic_six}
-
+    \(M\) の最小多項式 \(m_M(x)\) は
+    \[\Phi_1(x), \Phi_2(x), \Phi_3(x), \Phi_4(x), \Phi_6(x), \Phi_1(x)\Phi_2(x) \quad \text{に限る.}\]
 \end{lemma}
 
 \begin{lemma}\label{minpoly_cyc_order}\lean{minpoly_cyc_order}\leanok\uses{cyclotomic_four, cyclotomic_six}
-
+    \(m_M(x) = \Phi_n(x)\) ならば, \(M\) の位数は \(n\) に等しい.
 \end{lemma}
 
 \begin{theorem}\label{finorder_class}\lean{finorder_class}\leanok\uses{minpoly_class, minpoly_cyc_order}
-
+    \(GL(2, \mathbb{Q})\) の有限位数の元の位数は \(1, 2, 3, 4, 6\) に限る.
 \end{theorem}
 
 \begin{definition}\label{toGL}\lean{toGL}\leanok
-    
+    有理数体上の \(2\) 次正方行列 \(M\) を \(GL(2, \mathbb{Q})\) の元とみなすための同型写像.
 \end{definition}
 
 \begin{theorem}\label{finite_order_matrix}\lean{finite_order_matrix}\leanok\uses{toGL}
-
+    \(n = 1, 2, 3, 4, 6\) それぞれに対して, 位数が \(n\) となるような
+    \(GL(2, \mathbb{Q})\) の元 \(M\) が存在する.
 \end{theorem}

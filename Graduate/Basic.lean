@@ -65,27 +65,17 @@ lemma normalizedfactor_eq_cyclotomic (h : IsOfFinOrder M.val) (h' : n = orderOf 
 lemma cyclotomic_deg_eq_totient (n : ℕ) : (Φ n).natDegree = φ n := natDegree_cyclotomic n ℚ
 
 
--- 任意の自然数nはその素因数の指数乗の積で表せる
-lemma exist_factorization (n : ℕ) (h : n ≠ 0) : n = ∏ p ∈ n.primeFactors, p ^ (n.factorization p) := by
-  nth_rw 1 [← factorization_prod_pow_eq_self h, prod_factorization_eq_prod_primeFactors]
-
-
--- 自然数nについてφ n = ∏ φ p^n = ∏ p^(n-1)*(p-1) が成り立つ
-lemma totient_factorization (n : ℕ) (h : n ≠ 0) : φ n = ∏ p ∈ n.primeFactors, (p ^ (n.factorization p - 1) * (p - 1)) := by
-  rw [totient_eq_prod_factorization h]; rfl
-
-
 -- φ n = 2 ならば n は2と3以外の素因数をもたない
 lemma n_exist (n : ℕ) (h : n ≠ 0) (h' : φ n = 2) : n = 2 ^ (n.factorization 2) * 3 ^ (n.factorization 3) := by
   have h₁ : n.primeFactors ⊆ ({2, 3} : Finset ℕ) := by
     intro p pmem; rw [mem_insert, mem_singleton]
-    rw [totient_factorization n h] at h'
+    rw [totient_eq_prod_factorization h] at h'
     have h1 : p ^ (n.factorization p - 1) * (p - 1) ∣ 2 := by
       rw [← h']; apply dvd_prod_of_mem; exact pmem
     have h2 : p - 1 ∣ 2 := dvd_of_mul_left_dvd h1
     have h3 : p - 1 ≤ 2 := le_of_dvd (by decide) h2
     interval_cases hu : p - 1 <;> omega
-  nth_rw 1 [exist_factorization n h]
+  nth_rw 1 [← factorization_prod_pow_eq_self h, prod_factorization_eq_prod_primeFactors]
   rw [prod_subset h₁]
   · rw [prod_pair]; decide
   · intro p pmem pnot; rw [pow_eq_one_iff]; right

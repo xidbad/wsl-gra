@@ -3,8 +3,6 @@ minpoly_dvd_X_pow_sub_one
 exist_normalizefactor
 normalizedfactor_eq_cyclotomic
 cyclotomic_deg_eq_totient
-exist_factorization
-totient_factorization
 n_exist
 totient_eq_two_iff
 totient_le_two_iff
